@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 
 const PORT = 8080;
 const QUESTIONS_PER_QUIZ = 10;
@@ -11,6 +12,7 @@ console.log(`Loaded ${questions.length} questions`);
 
 const app = express();
 app.use(bodyParser.json());
+app.use(cors());
 app.post('/quiz', startQuiz);
 app.get('/quiz/:quizId/question', getQuestionForQuiz);
 app.post('/quiz/:quizId/answer', answerQuestionForQuiz);
