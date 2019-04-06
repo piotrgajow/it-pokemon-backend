@@ -15,6 +15,7 @@ console.log(`Loaded ${questions.length} questions`);
 const app = express();
 app.use(bodyParser.json());
 app.use(cors());
+app.get('/status', status);
 app.post('/quiz', startQuiz);
 app.get('/quiz/:quizId/question', getQuestionForQuiz);
 app.post('/quiz/:quizId/answer', answerQuestionForQuiz);
@@ -24,6 +25,10 @@ app.listen(PORT, onServerStarted);
 
 function onServerStarted() {
     console.log(`Server listening on port ${PORT}`);
+}
+
+function status(request, response) {
+    response.send('Ok!');
 }
 
 function startQuiz(request, response) {
