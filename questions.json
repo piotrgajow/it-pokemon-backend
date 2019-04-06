@@ -1,0 +1,139 @@
+[
+  {
+    "name": "Gorebyss",
+    "url": "http://bulbapedia.bulbagarden.net/wiki/Gorebyss_(Pok%C3%A9mon)",
+    "type": 0
+  },
+  {
+    "name": "Tokutek",
+    "url": "https://www.percona.com/",
+    "type": 1
+  },
+  {
+    "name": "Adabas",
+    "url": "https://en.wikipedia.org/wiki/ADABAS",
+    "type": 1
+  },
+  {
+    "name": "Feebas",
+    "url": "http://bulbapedia.bulbagarden.net/wiki/Feebas_(Pok%C3%A9mon)",
+    "type": 0
+  },
+  {
+    "name": "Azurill",
+    "url": "http://bulbapedia.bulbagarden.net/wiki/Azurill_(Pok%C3%A9mon)",
+    "type": 0
+  },
+  {
+    "name": "Hadoop",
+    "url": "https://hadoop.apache.org/",
+    "type": 1
+  },
+  {
+    "name": "Vulpix",
+    "url": "http://bulbapedia.bulbagarden.net/wiki/Vulpix_(Pok%C3%A9mon)",
+    "type": 0
+  },
+  {
+    "name": "Hekaton",
+    "url": "https://en.wikipedia.org/wiki/Hekaton_(database)",
+    "type": 1
+  },
+  {
+    "name": "Delibird",
+    "url": "http://bulbapedia.bulbagarden.net/wiki/Delibird_(Pok%C3%A9mon)",
+    "type": 0
+  },
+  {
+    "name": "Summingbird",
+    "url": "https://github.com/twitter/summingbird",
+    "type": 1
+  },
+  {
+    "name": "Akiban",
+    "url": "http://www.akiban.com/",
+    "type": 1
+  },
+  {
+    "name": "Arbok",
+    "url": "http://bulbapedia.bulbagarden.net/wiki/Arbok_(Pok%C3%A9mon)",
+    "type": 0
+  },
+  {
+    "name": "Flink",
+    "url": "https://flink.apache.org/",
+    "type": 1
+  },
+  {
+    "name": "Impala",
+    "url": "http://impala.io/",
+    "type": 1
+  },
+  {
+    "name": "Pangool",
+    "url": "http://pangool.net/",
+    "type": 1
+  },
+  {
+    "name": "Azkaban",
+    "url": "http://azkaban.github.io/",
+    "type": 1
+  },
+  {
+    "name": "Arvados",
+    "url": "https://arvados.org/",
+    "type": 1
+  },
+  {
+    "name": "Seahorse",
+    "url": "https://seahorse.deepsense.io/",
+    "type": 1,
+    "text": "Not to be confused with Horsea. Seahorse lets you create Apache Spark applications in a visual way.",
+    "img": "seahorse.png"
+  },
+  {
+    "name": "Horsea",
+    "url": "http://bulbapedia.bulbagarden.net/wiki/Horsea_(Pok%C3%A9mon)",
+    "type": 0
+  },
+  {
+    "name": "Titan",
+    "url": "http://thinkaurelius.github.io/titan/",
+    "type": 1
+  },
+  {
+    "name": "Atlassian",
+    "url": "https://www.atlassian.com/",
+    "type": 1
+  },
+  {
+    "name": "Jirachi",
+    "url": "http://bulbapedia.bulbagarden.net/wiki/Jirachi_(Pok%C3%A9mon)",
+    "type": 0
+  },
+  {
+    "name": "Spoink",
+    "url": "http://bulbapedia.bulbagarden.net/wiki/Spoink_(Pok%C3%A9mon)",
+    "type": 0
+  },
+  {
+    "name": "Debezium",
+    "url": "https://debezium.io",
+    "type": 1
+  },
+  {
+    "name": "Geode",
+    "url": "https://geode.apache.org/",
+    "type": 1
+  },
+  {
+    "name": "Geodude",
+    "url": "http://bulbapedia.bulbagarden.net/wiki/Geodude_(Pok%C3%A9mon)",
+    "type": 0
+  },
+  {
+    "name": "Ambari",
+    "url": "https://ambari.apache.org/",
+    "type": 1
+  }
+]
