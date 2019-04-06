@@ -31,21 +31,21 @@ function startQuiz(request, response) {
         current: 0,
         points: 0,
     };
-    response.send({ id: quizId });
+    response.send({ id: quizId, questionCount: QUESTIONS_PER_QUIZ });
 }
 
 function getQuestionForQuiz(request, response) {
     const quizId = request.params.quizId;
     const quiz = quizes[quizId];
     if (!quiz) {
-        response.status(404).send(`Quiz with id ${quizId} does not exist`);
+        response.status(404).send({ error: `Quiz with id ${quizId} does not exist` });
         return;
     }
     const question = quiz.questions[quiz.current];
     if (question) {
         response.send({ name: question.name });
     } else {
-        response.status(400).send('No more questions in the quiz!');
+        response.status(400).send({ error: 'No more questions in the quiz!' });
     }
 }
 
@@ -53,19 +53,19 @@ function answerQuestionForQuiz(request, response) {
     const quizId = request.params.quizId;
     const quiz = quizes[quizId];
     if (!quiz) {
-        response.status(404).send(`Quiz with id ${quizId} does not exist`);
+        response.status(404).send({ error: `Quiz with id ${quizId} does not exist` });
         return;
     }
 
     const answerJson = request.body;
     const answer = answerJson.answer;
     if (answer !== 0 && answer !== 1) {
-        response.status(400).send('Invalid answer format');
+        response.status(400).send({ error: 'Invalid answer format' });
         return;
     }
 
     if (quiz.current >= quiz.questions.length) {
-        response.status(400).send(`No questions to answer in this quiz`);
+        response.status(400).send({ error: `No questions to answer in this quiz` });
         return;
     }
     const question = quiz.questions[quiz.current];
@@ -85,7 +85,7 @@ function getQuizScore(request, response) {
     const quiz = quizes[quizId];
 
     if (!quiz) {
-        response.status(404).send(`Quiz with id ${quizId} does not exist`);
+        response.status(404).send({ error: `Quiz with id ${quizId} does not exist` });
         return;
     }
 
