@@ -33,6 +33,7 @@ function status(request, response) {
 
 function startQuiz(request, response) {
     const quizId = id++;
+    console.log(`Statred quiz ${quizId}`);
     quizes[quizId] = {
         questions: randomizeQuestions(QUESTIONS_PER_QUIZ),
         current: 0,
@@ -78,6 +79,7 @@ function answerQuestionForQuiz(request, response) {
     const question = quiz.questions[quiz.current];
     const details = { name: question.name, url: question.url, type: question.type };
 
+    console.log(`Question ${quiz.current} answered for quiz ${quizId}`);
     quiz.current++;
     if (question.type === answer) {
         quiz.points++;
