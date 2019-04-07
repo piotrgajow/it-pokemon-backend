@@ -2,6 +2,10 @@
 
 Backend API for a quiz game based on [Pokemon or Big Data Quiz](https://github.com/pixelastic/pokemonorbigdata) idea and inspired by ["We're Gonna Build a Framework!" song](http://www.dylanbeattie.net/2016/05/were-gonna-build-framework.html).
 
+## Technologies
+
+- Written in JavaScript using [Express.js](https://expressjs.com/)
+
 ## Setup instructions
 
 ### Prerequisites
