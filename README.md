@@ -13,4 +13,4 @@ Backend API for a quiz game based on [Pokemon or Big Data Quiz](https://github.c
 - Clone the repository
 - From main directory (containing `package.json` file) run the following commands in terminal/command line
     - `npm install`
-    - Linux: `npm run start-server` / Windows: `npm run start`
+    - `npm run start`
