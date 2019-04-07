@@ -87,9 +87,7 @@
   {
     "name": "Seahorse",
     "url": "https://seahorse.deepsense.io/",
-    "type": 1,
-    "text": "Not to be confused with Horsea. Seahorse lets you create Apache Spark applications in a visual way.",
-    "img": "seahorse.png"
+    "type": 1
   },
   {
     "name": "Horsea",
@@ -135,5 +133,190 @@
     "name": "Ambari",
     "url": "https://ambari.apache.org/",
     "type": 1
+  },
+  {
+    "name": "Handlebars",
+    "url": "https://handlebarsjs.com/",
+    "type": 1
+  },
+  {
+    "name": "Phalcon",
+    "url": "https://phalconphp.com/pl/",
+    "type": 1
+  },
+  {
+    "name": "Django",
+    "url": "https://www.djangoproject.com/",
+    "type": 1
+  },
+  {
+    "name": "Spark",
+    "url": "https://spark.apache.org/",
+    "type": 1
+  },
+  {
+    "name": "Selenium",
+    "url": "https://www.seleniumhq.org/",
+    "type": 1
+  },
+  {
+    "name": "Groovy",
+    "url": "http://groovy-lang.org/",
+    "type": 1
+  },
+  {
+    "name": "Jasmine",
+    "url": "https://jasmine.github.io/",
+    "type": 1
+  },
+  {
+    "name": "Thymeleaf",
+    "url": "https://www.thymeleaf.org/",
+    "type": 1
+  },
+  {
+    "name": "Grunt",
+    "url": "https://gruntjs.com/",
+    "type": 1
+  },
+  {
+    "name": "Mocha",
+    "url": "http://ricostacruz.com/mocha/",
+    "type": 1
+  },
+  {
+    "name": "Laravel",
+    "url": "https://laravel.com/",
+    "type": 1
+  },
+  {
+    "name": "Backbone",
+    "url": "https://backbonejs.org/",
+    "type": 1
+  },
+  {
+    "name": "Lodash",
+    "url": "https://lodash.com/",
+    "type": 1
+  },
+  {
+    "name": "Pikachu",
+    "url": "https://bulbapedia.bulbagarden.net/wiki/Pikachu_(Pok%C3%A9mon)",
+    "type": 0
+  },
+  {
+    "name": "Sandshrew",
+    "url": "https://bulbapedia.bulbagarden.net/wiki/Sandshrew_(Pok%C3%A9mon)",
+    "type": 0
+  },
+  {
+    "name": "Clefable",
+    "url": "https://bulbapedia.bulbagarden.net/wiki/Clefable_(Pok%C3%A9mon)",
+    "type": 0
+  },
+  {
+    "name": "Poliwag",
+    "url": "https://bulbapedia.bulbagarden.net/wiki/Poliwag_(Pok%C3%A9mon)",
+    "type": 0
+  },
+  {
+    "name": "Rapidash",
+    "url": "https://bulbapedia.bulbagarden.net/wiki/Rapidash_(Pok%C3%A9mon)",
+    "type": 0
+  },
+  {
+    "name": "Onix",
+    "url": "https://bulbapedia.bulbagarden.net/wiki/Onix_(Pok%C3%A9mon)",
+    "type": 0
+  },
+  {
+    "name": "Cubone",
+    "url": "https://bulbapedia.bulbagarden.net/wiki/Cubone_(Pok%C3%A9mon)",
+    "type": 0
+  },
+  {
+    "name": "Ariados",
+    "url": "https://bulbapedia.bulbagarden.net/wiki/Ariados_(Pok%C3%A9mon)",
+    "type": 0
+  },
+  {
+    "name": "Quagsire",
+    "url": "https://bulbapedia.bulbagarden.net/wiki/Quagsire_(Pok%C3%A9mon)",
+    "type": 0
+  },
+  {
+    "name": "Heracross",
+    "url": "https://bulbapedia.bulbagarden.net/wiki/Heracross_(Pok%C3%A9mon)",
+    "type": 0
+  },
+  {
+    "name": "Corsola",
+    "url": "https://bulbapedia.bulbagarden.net/wiki/Corsola_(Pok%C3%A9mon)",
+    "type": 0
+  },
+  {
+    "name": "Larvitar",
+    "url": "https://bulbapedia.bulbagarden.net/wiki/Larvitar_(Pok%C3%A9mon)",
+    "type": 0
+  },
+  {
+    "name": "Grovyle",
+    "url": "https://bulbapedia.bulbagarden.net/wiki/Grovyle_(Pok%C3%A9mon)",
+    "type": 0
+  },
+  {
+    "name": "Lotad",
+    "url": "https://bulbapedia.bulbagarden.net/wiki/Lotad_(Pok%C3%A9mon)",
+    "type": 0
+  },
+  {
+    "name": "Slaking",
+    "url": "https://bulbapedia.bulbagarden.net/wiki/Slaking_(Pok%C3%A9mon)",
+    "type": 0
+  },
+  {
+    "name": "Electrike",
+    "url": "https://bulbapedia.bulbagarden.net/wiki/Electrike_(Pok%C3%A9mon)",
+    "type": 0
+  },
+  {
+    "name": "Zangoose",
+    "url": "https://bulbapedia.bulbagarden.net/wiki/Zangoose",
+    "type": 0
+  },
+  {
+    "name": "Chimchar",
+    "url": "https://bulbapedia.bulbagarden.net/wiki/Chimchar_(Pok%C3%A9mon)",
+    "type": 0
+  },
+  {
+    "name": "Mothim",
+    "url": "https://bulbapedia.bulbagarden.net/wiki/Mothim_(Pok%C3%A9mon)",
+    "type": 0
+  },
+  {
+    "name": "Drifloon",
+    "url": "https://bulbapedia.bulbagarden.net/wiki/Drifloon_(Pok%C3%A9mon)",
+    "type": 0
+  },
+  {
+    "name": "Mongoose",
+    "url": "https://mongoosejs.com/",
+    "type": 1
+  },
+  {
+    "name": "Electron",
+    "url": "https://electronjs.org/",
+    "type": 1
+  },
+  {
+    "name": "Mantyke",
+    "url": "https://bulbapedia.bulbagarden.net/wiki/Mantyke_(Pok%C3%A9mon)",
+    "type": 0
+  },
+  {
+    "name": "Mesprit",
+    "url": "https://bulbapedia.bulbagarden.net/wiki/Mesprit_(Pok%C3%A9mon)",
+    "type": 0
   }
 ]

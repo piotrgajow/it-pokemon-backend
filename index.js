@@ -8,9 +8,16 @@ const PORT = 8090;
 const QUESTIONS_PER_QUIZ = 10;
 
 const questions = require('./questions');
+const counts = questions.reduce((acc, curr) => {
+    acc.total++;
+    acc.pokemon += curr.type === 0 ? 1 : 0;
+    acc.it += curr.type === 1 ? 1 : 0;
+    return acc;
+}, {total: 0, pokemon: 0, it: 0});
+console.log(`Loaded ${counts.total} questions (${counts.pokemon} pokemons, ${counts.it} IT)`);
+
 const quizes = {};
 let id = 1;
-console.log(`Loaded ${questions.length} questions`);
 
 const app = express();
 app.use(bodyParser.json());
