@@ -40,7 +40,7 @@ function status(request, response) {
 
 function startQuiz(request, response) {
     const quizId = id++;
-    console.log(`Statred quiz ${quizId}`);
+    console.log(`Started quiz ${quizId}`);
     quizes[quizId] = {
         questions: randomizeQuestions(QUESTIONS_PER_QUIZ),
         current: 0,
@@ -58,9 +58,9 @@ function getQuestionForQuiz(request, response) {
     }
     const question = quiz.questions[quiz.current];
     if (question) {
-        response.send({ name: question.name });
+        response.send({ name: question.name, done: false });
     } else {
-        response.status(400).send({ error: 'No more questions in the quiz!' });
+        response.send({ name: null, done: true });
     }
 }
 
@@ -112,6 +112,6 @@ function randomizeQuestions(count) {
     return questions.sort(() => 0.5 - Math.random()).slice(0, count);
 }
 
-function endpointNotFound(request, response, next) {
+function endpointNotFound(request, response) {
     response.status(404).send(`Enpoint ${request.method} ${request.url} does not exist`);
 }
