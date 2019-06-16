@@ -35,7 +35,7 @@ function onServerStarted() {
 }
 
 function status(request, response) {
-    response.send('Ok!');
+    response.send({ status: 'Ok!' });
 }
 
 function startQuiz(request, response) {
