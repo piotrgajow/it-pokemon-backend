@@ -3,6 +3,9 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const swaggerUi = require('swagger-ui-express');
+
+const swaggerDocument = require('./api.json');
 
 const PORT = 8090;
 const QUESTIONS_PER_QUIZ = 10;
@@ -22,6 +25,7 @@ let id = 1;
 const app = express();
 app.use(bodyParser.json());
 app.use(cors());
+app.use('/api', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.get('/status', status);
 app.post('/quiz', startQuiz);
 app.get('/quiz/:quizId/question', getQuestionForQuiz);

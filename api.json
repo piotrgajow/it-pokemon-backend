@@ -1,0 +1,232 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "IT or Pokemon name?",
+    "description": "Backend API for a quiz game \"IT or Pokemon name?\""
+  },
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/api": {
+      "get": {
+        "summary": "API documentation",
+        "description": "Shows this page"
+      }
+    },
+    "/status": {
+      "get": {
+        "summary": "Server status",
+        "description": "Returns 'Ok!' text if server is working",
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/Status"
+            }
+          }
+        }
+      }
+    },
+    "/quiz": {
+      "post": {
+        "summary": "Start new quiz",
+        "description": "Starts new quiz and returns its ID",
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/NewQuiz"
+            }
+          }
+        }
+      }
+    },
+    "/quiz/{quizId}/question": {
+      "get": {
+        "summary": "Get question",
+        "description": "Returns current question for quiz",
+        "parameters": [
+          {
+            "name": "quizId",
+            "in": "path",
+            "required": true,
+            "description": "Quiz ID",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/Question"
+            }
+          },
+          "404": {
+            "description": "Quiz given by `quizId` was not found",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/quiz/{quizId}/answer": {
+      "post": {
+        "summary": "Answer question",
+        "description": "Answers current question for quiz and returns the result",
+        "parameters": [
+          {
+            "name": "quizId",
+            "in": "path",
+            "required": true,
+            "description": "Quiz ID",
+            "type": "integer"
+          },
+          {
+            "name": "answer",
+            "in": "body",
+            "description": "answer to the question - 0 for Pokemon, 1 for IT name",
+            "schema": {
+              "$ref": "#/definitions/Answer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/AnswerResult"
+            }
+          },
+          "400": {
+            "description": "Quiz was already finished, or answer came in incorrect format",
+            "schema": "#/definitions/Error"
+          },
+          "404": {
+            "description": "Quiz given by `quizId` was not found",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/quiz/{quizId}/score": {
+      "get": {
+        "summary": "Get quiz score",
+        "description": "Returns the score for quiz",
+        "parameters": [
+          {
+            "name": "quizId",
+            "in": "path",
+            "required": true,
+            "description": "Quiz ID",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/Score"
+            }
+          },
+          "404": {
+            "description": "Quiz given by `quizId` was not found",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Status": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "description": "If server is working should contain string 'Ok!'",
+          "type": "string"
+        }
+      }
+    },
+    "Error": {
+      "type": "object",
+      "properties": {
+        "error": {
+          "description": "Error description",
+          "type": "string"
+        }
+      }
+    },
+    "NewQuiz": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "description": "ID of the new quiz",
+          "type": "integer"
+        },
+        "questionCount": {
+          "description": "Number of questions to be answered",
+          "type": "integer"
+        }
+      }
+    },
+    "Question": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "description": "Name to be guessed or null if quiz was already finished",
+          "type": "string"
+        },
+        "done": {
+          "description": "True if quiz was already finished, false otherwise",
+          "type": "boolean"
+        }
+      }
+    },
+    "Answer": {
+      "type": "object",
+      "properties": {
+        "answer": {
+          "description": "Answer for the question - 0 for Pokemon, 1 for IT",
+          "type": "integer"
+        }
+      }
+    },
+    "Result": {
+      "type": "object",
+      "properties": {
+        "correct": {
+          "description": "True if answer was correct",
+          "type": "boolean"
+        },
+        "details": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "description": "Name that was used in the question",
+              "type": "string"
+            },
+            "url": {
+              "description": "Url to get more information about the name",
+              "type": "string"
+            },
+            "type": {
+              "description": "0 for Pokemon, 1 for IT",
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "Score": {
+      "type": "object",
+      "properties": {
+        "score": {
+          "description": "Number of points scored in the quiz",
+          "type": "integer"
+        }
+      }
+    }
+  }
+}
+
