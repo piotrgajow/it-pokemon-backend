@@ -28,9 +28,13 @@ app.use(cors());
 app.use('/api', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.get('/status', status);
 app.post('/quiz', startQuiz);
+app.all('/quiz', onlyMethodAvailable('POST'));
 app.get('/quiz/:quizId/question', getQuestionForQuiz);
+app.all('/quiz/:quizId/question', onlyMethodAvailable('GET'));
 app.post('/quiz/:quizId/answer', answerQuestionForQuiz);
+app.all('/quiz/:quizId/answer', onlyMethodAvailable('POST'));
 app.get('/quiz/:quizId/score', getQuizScore);
+app.all('/quiz/:quizId/score', onlyMethodAvailable('GET'));
 app.use(endpointNotFound);
 app.listen(PORT, onServerStarted);
 
@@ -116,6 +120,12 @@ function randomizeQuestions(count) {
     return questions.sort(() => 0.5 - Math.random()).slice(0, count);
 }
 
+function onlyMethodAvailable(validMethod) {
+    return (request, response) => {
+        response.status(404).send(`Invalid HTTP method ${request.method} for endpoint ${request.url}. Only ${validMethod} requests are allowed.`);
+    }
+}
+
 function endpointNotFound(request, response) {
-    response.status(404).send(`Enpoint ${request.method} ${request.url} does not exist`);
+    response.status(404).send(`Enpoint ${request.url} does not exist`);
 }
