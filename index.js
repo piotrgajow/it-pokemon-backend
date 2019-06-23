@@ -17,7 +17,8 @@ const counts = questions.reduce((acc, curr) => {
     acc.it += curr.type === 1 ? 1 : 0;
     return acc;
 }, {total: 0, pokemon: 0, it: 0});
-console.log(`Loaded ${counts.total} questions (${counts.pokemon} pokemons, ${counts.it} IT)`);
+
+logMessage(`Loaded ${counts.total} questions (${counts.pokemon} pokemons, ${counts.it} IT)`);
 
 const quizes = {};
 let id = 1;
@@ -39,7 +40,7 @@ app.use(endpointNotFound);
 app.listen(PORT, onServerStarted);
 
 function onServerStarted() {
-    console.log(`Server listening on port ${PORT}`);
+    logMessage(`Server listening on port ${PORT}`);
 }
 
 function status(request, response) {
@@ -48,7 +49,7 @@ function status(request, response) {
 
 function startQuiz(request, response) {
     const quizId = id++;
-    console.log(`Started quiz ${quizId}`);
+    logMessage(`Started quiz ${quizId}`);
     quizes[quizId] = {
         questions: randomizeQuestions(QUESTIONS_PER_QUIZ),
         current: 0,
@@ -66,8 +67,10 @@ function getQuestionForQuiz(request, response) {
     }
     const question = quiz.questions[quiz.current];
     if (question) {
+        logMessage(`Returning question ${quiz.current} for quiz ${quizId}`);
         response.send({ name: question.name, done: false });
     } else {
+        logMessage(`All questions in quiz ${quizId} have been already answered`);
         response.send({ name: null, done: true });
     }
 }
@@ -94,7 +97,7 @@ function answerQuestionForQuiz(request, response) {
     const question = quiz.questions[quiz.current];
     const details = { name: question.name, url: question.url, type: question.type };
 
-    console.log(`Question ${quiz.current} answered for quiz ${quizId}`);
+    logMessage(`Question ${quiz.current} answered for quiz ${quizId}`);
     quiz.current++;
     if (question.type === answer) {
         quiz.points++;
@@ -118,6 +121,10 @@ function getQuizScore(request, response) {
 
 function randomizeQuestions(count) {
     return questions.sort(() => 0.5 - Math.random()).slice(0, count);
+}
+
+function logMessage(message) {
+    console.log(`[${new Date().toLocaleString()}] ${message}`);
 }
 
 function onlyMethodAvailable(validMethod) {
